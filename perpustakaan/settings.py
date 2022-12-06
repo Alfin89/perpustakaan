@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-h_0yvu*nf9tc!(_*@yq#ry-me(!0gukl5+v@#i!z_v67!6!$-5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.varcel.app','.now.sh']
 
 
 # Application definition
@@ -125,11 +125,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILE_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static'),
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
 # django_heroku.settings(locals())
+
 
 LOGIN_REDIRECT_URL = 'buku'
 

@@ -1,0 +1,28 @@
+{
+    "version":2,
+    "builds" [
+     {
+        "src": "perpustakaan.wsgi.py",
+        "use": "@varcel/python",
+        "config": { "maxLambdaSize": "70mb", "runtime": "python3.11"}
+     },
+     {
+        "src": "build_files_sh",
+        "use": "@varcel/static-build",
+        "config": {
+            "distDir": "staticfiles_build"
+        }
+     }
+    ],
+     "routes": [
+        {
+            "src": "/static/(.*)",
+            "dest": "/static/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "perpustakaan.wsgi.py"
+        }
+
+    ]
+}
