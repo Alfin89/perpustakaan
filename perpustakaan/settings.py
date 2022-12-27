@@ -40,9 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'perpusapp.apps.PerpusappConfig',
-    'serviceapp.apps.ServiceappConfig',
-    'aboutapp.apps.AboutappConfig',
+    'perpusapp',
 ]
 
 MIDDLEWARE = [
@@ -85,7 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'perpus',
         'USER' : 'root',
-        'PASSWORD' : 'admin12345',
+        'PASSWORD' : 'alfinkamil89',
         'HOST' : 'localhost',
         'PORT' : '3306',     
     }
