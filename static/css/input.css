@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&family=Rubik+Puddles&display=swap');
+/* font */
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    /* font-family: 'Montserrat', sans-serif; */
+    overflow-x: hidden;
+}
+nav{
+    display: flex;
+    background-color: rgb(222, 184, 135);
+    justify-content: space-around;
+    /* padding: 20px 0; */
+    height: 50px;
+    align-items: center;
+    box-shadow: 1px 1px 5px black;
+}
+nav .logo{
+    font-family: 'Rubik Puddles', cursive;
+    color: white;
+    letter-spacing: 1px;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    width: 25%;
+    justify-content: space-between;
+}
+nav ul li a{
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+nav ul li a:hover{
+    color: rgb(171, 159, 159);
+}
+/* Hamburger */
+
+.menu-toggle{
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+}
+.menu-toggle input{
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    transform: translateY(-5px);
+    transform: translateX(-7px);
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+}
+.menu-toggle span{
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+/* Hamburger Menu Animation */
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+}
+.menu-toggle span:last-child{
+    transform-origin: 0 100%;
+}
+.menu-toggle input:checked ~ span:nth-child(2){
+    background-color: bisque;
+    box-shadow: 0.8px 0.8px 3px white;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+.menu-toggle input:checked ~ span:last-child{
+    background-color: bisque;
+    box-shadow: 0.8px 0.8px 3px white;
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+.menu-toggle input:checked ~ span:nth-child(3){
+    opacity: 0;
+    transform: scale(0);
+}
+/* Footer */
+.footer-container{
+    background-color: rgb(222, 184, 135);
+    max-width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+}
+.footer-items{
+    width: 400px;
+    height: 200px;
+    text-align: center;
+}
+.footer-items-1{
+    align-self: start;
+}
+.footer-items-2{
+    align-self: center;
+}
+.footer-items-3{
+    align-self: end;
+}
+/* Responsive */
+/* tablet */
+@media screen and (max-width: 768px){
+    nav ul{
+        width: 50%;
+    }
+}
+/* notbook */
+/* @media screen and (max-width: 1280px) {
+    nav ul{
+        width: 5%;
+    }
+} */
+/* Handphone */
+@media screen and (max-width: 576px) {
+    .menu-toggle{
+        display: flex;
+    }
+    nav ul{
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 220px;
+        height: 100vh;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        background-color: burlywood;
+        z-index: -1;
+        transform: translateX(100%);
+        transition: all 1s;
+        opacity: 0;
+    }
+
+    nav ul.slide{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
